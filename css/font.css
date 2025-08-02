@@ -1,0 +1,6 @@
+/* 字体css */
+@font-face{
+  font-family: 'HuangkaihuaLawyerFont'; 
+  font-display: swap;
+  src: url('/ttf/huangkaihuaLawyerfont-2.ttf') format("truetype");
+}
