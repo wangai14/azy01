@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>Facebook 数据采集</title>
+      <link href="/2025/07/30/facebook%E8%BD%AF%E4%BB%B6%E9%87%87%E9%9B%86%E6%95%99%E7%A8%8B/"/>
+      <url>/2025/07/30/facebook%E8%BD%AF%E4%BB%B6%E9%87%87%E9%9B%86%E6%95%99%E7%A8%8B/</url>
+      
+        <content type="html"><![CDATA[<p><img src="C:\Users\Administrator\AppData\Roaming\marktext\images\2025-08-04-10-56-48-image.png"> </p><p>🔍 工具界面分析</p><h3 id="左侧菜单（功能模块）大致包括："><a href="#左侧菜单（功能模块）大致包括：" class="headerlink" title="左侧菜单（功能模块）大致包括："></a>左侧菜单（功能模块）大致包括：</h3><h4 id="🧑‍🤝‍🧑-好友-小组采集类"><a href="#🧑‍🤝‍🧑-好友-小组采集类" class="headerlink" title="🧑‍🤝‍🧑 好友&#x2F;小组采集类"></a>🧑‍🤝‍🧑 <strong>好友&#x2F;小组采集类</strong></h4><ul><li><p><strong>FB指定好友采集 &#x2F; FB同好友采集</strong>：抓取某账号或某好友的好友列表（用于定向分析或二次引流）</p></li><li><p><strong>小组成员采集</strong>：用于采集某FB群组的所有成员信息（头像、名称、加入时间、发帖记录等）</p></li><li><p><strong>小组活跃流 &#x2F; 小组评论监控流</strong>：分析小组活跃用户，抓发帖、评论频率高的人（用于精准引流）</p></li></ul><h4 id="📄-主页相关采集"><a href="#📄-主页相关采集" class="headerlink" title="📄 主页相关采集"></a>📄 <strong>主页相关采集</strong></h4><ul><li><p><strong>主页基础采集 &#x2F; 同行流量 &#x2F; 帖文采集 &#x2F; 评论监控流</strong>：抓取竞品主页的粉丝数、帖子、互动情况等</p></li><li><p><strong>主页同行线索</strong>：可能是基于某主页推荐相似主页（用于拓宽竞品池）</p></li></ul><h4 id="📊-数据整合"><a href="#📊-数据整合" class="headerlink" title="📊 数据整合"></a>📊 <strong>数据整合</strong></h4><ul><li><p><strong>FB小组大数据 &#x2F; FB主页大数据</strong>：采集回来的数据做整合分析，可能输出 Excel&#x2F;CSV 格式</p></li><li><p><strong>FB广告采集</strong>：抓取某主页正在跑的广告（参考 ad spy 工具）</p></li></ul><h4 id="📺-直播与视频类"><a href="#📺-直播与视频类" class="headerlink" title="📺 直播与视频类"></a>📺 <strong>直播与视频类</strong></h4><ul><li><strong>FB直播采集</strong>：监控直播账号、直播时间、直播时评论数、观看数等</li></ul><hr><h2 id="🧠-如何用它辅助你们的“无付费投流”社媒打法？"><a href="#🧠-如何用它辅助你们的“无付费投流”社媒打法？" class="headerlink" title="🧠 如何用它辅助你们的“无付费投流”社媒打法？"></a>🧠 如何用它辅助你们的“无付费投流”社媒打法？</h2><h3 id="🎯-场景一：找内容参考-热门话题"><a href="#🎯-场景一：找内容参考-热门话题" class="headerlink" title="🎯 场景一：找内容参考 &amp; 热门话题"></a>🎯 场景一：<strong>找内容参考 &amp; 热门话题</strong></h3><ul><li><p>用「主页基础采集 + 帖文采集」功能，抓竞品或同行账号（例如特斯拉配件类账号）</p></li><li><p>分析他们哪类内容点赞&#x2F;评论&#x2F;转发多</p></li><li><p>提炼选题方向、评论关键词，用于你自己拍内容</p></li></ul><h3 id="🎯-场景二：精准找人私信-社群推广"><a href="#🎯-场景二：精准找人私信-社群推广" class="headerlink" title="🎯 场景二：精准找人私信 &#x2F; 社群推广"></a>🎯 场景二：<strong>精准找人私信 &#x2F; 社群推广</strong></h3><ul><li><p>进入特斯拉&#x2F;改装&#x2F;车主 FB 群组 → 用「小组成员采集」</p></li><li><p>找出常活跃发言的人 → 加好友或引导私信&#x2F;进群</p></li><li><p>用“主页同行线索”功能拓宽潜在受众池</p></li></ul><p>⚠️建议：不要直接自动私信太多，会容易触发FB限制，可做人设号+半自动沟通。</p><h3 id="🎯-场景三：FB广告情报分析（非投放，也能学）"><a href="#🎯-场景三：FB广告情报分析（非投放，也能学）" class="headerlink" title="🎯 场景三：FB广告情报分析（非投放，也能学）"></a>🎯 场景三：<strong>FB广告情报分析（非投放，也能学）</strong></h3><ul><li><p>用「FB广告采集」功能，看竞品投放的素材</p></li><li><p>看他们落地页结构、文案、按钮颜色、产品组合</p></li><li><p>借鉴他们广告素材拍法来做你们社媒内容</p></li></ul><hr><h2 id="✅-建议使用流程（结合你们不投广告现状）"><a href="#✅-建议使用流程（结合你们不投广告现状）" class="headerlink" title="✅ 建议使用流程（结合你们不投广告现状）"></a>✅ 建议使用流程（结合你们不投广告现状）</h2><ol><li><p><strong>找 3~5 个你们产品相关的 FB 主页 + 群组</strong></p></li><li><p>用采集工具拉他们的热帖数据 + 群组活跃人数据</p></li><li><p>总结哪些内容类型最容易爆（例如“爆改 Model 3”、“晒光影氛围灯”等）</p></li><li><p>拍同类型视频，上传 YouTube &#x2F; IG &#x2F; TikTok</p></li><li><p>视频中引导用户点击 bio 访问你们的 Shopify 链接（可用 bit.ly 跟踪）</p></li></ol><hr><h2 id="🔐-提醒："><a href="#🔐-提醒：" class="headerlink" title="🔐 提醒："></a>🔐 提醒：</h2><p>如果这是第三方采集工具，使用时要注意：</p><ul><li><p>FB账号使用频繁切换或高频采集容易被风控（建议使用老号+代理IP）</p></li><li><p>不要全自动操作“加好友&#x2F;发私信”，以防账号被封</p></li><li><p>导出的数据仅供<strong>研究和分析使用</strong>，不要做恶意营销</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> facebook采集教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> facebook </tag>
+            
+            <tag> 教程 </tag>
+            
+            <tag> 采集 </tag>
+            
+            <tag> 自动化 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>这是一篇新的博文</title>
       <link href="/2025/07/30/%E8%BF%99%E6%98%AF%E4%B8%80%E7%AF%87%E6%96%B0%E7%9A%84%E5%8D%9A%E6%96%87/"/>
       <url>/2025/07/30/%E8%BF%99%E6%98%AF%E4%B8%80%E7%AF%87%E6%96%B0%E7%9A%84%E5%8D%9A%E6%96%87/</url>
