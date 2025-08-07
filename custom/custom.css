@@ -1,0 +1,83 @@
+/* 极光动画背景效果 */
+#web_bg {
+  /* CSS变量定义 */
+  --stripes: repeating-linear-gradient(
+    100deg,
+    #fff 0%,
+    #fff 7%,
+    transparent 10%,
+    transparent 12%,
+    #fff 16%
+  );
+  
+  
+  --rainbow: repeating-linear-gradient(
+    100deg,
+    #60a5fa 10%,
+    #e879f9 15%,
+    #60a5fa 20%,
+    #5eead4 25%,
+    #60a5fa 30%
+  );
+  
+  /* 多个重复线性渐变组合形成不同比例宽度的条状背景 */
+  background-image: var(--stripes), var(--rainbow);
+  background-size: 300% 200%;
+  background-position: 50% 50%, 50% 50%;
+  
+  /* 高斯模糊背景并且反转图像颜色 */
+  filter: blur(10px) invert(1);
+  
+  /* 图层蒙版使用径向渐变，径向渐变采用ellipsis椭圆形状，并设置中心点在由上方 */
+  mask-image: radial-gradient(ellipse at 100% 0%, black 40%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at 100% 0%, black 40%, transparent 70%);
+  
+  /* 取消鼠标事件 */
+  pointer-events: none;
+}
+
+/* 暗色模式下的极光效果调整 */
+[data-theme="dark"] #web_bg {
+  --stripes: repeating-linear-gradient(
+    100deg,
+    #000 0%,
+    #000 7%,
+    transparent 10%,
+    transparent 12%,
+    #000 16%
+  );
+  
+--rainbow: repeating-linear-gradient(
+    100deg,
+    #5433ff 10%,
+    #c00099 15%,
+    #720099 20%,
+    #4b5ce3 25%,
+    #6e33ff 30%
+);
+  
+  /* 暗色模式下移除颜色反转，保持原色 */
+  filter: blur(10px);
+}
+
+#web_bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--stripes), var(--rainbow);
+  background-size: 200% 100%;
+  animation: auroraAnimation 60s linear infinite;
+  /* 背景图相对视图口的位置设置为固定定位 */
+  background-attachment: fixed;
+  /* 背景颜色混合模式 */
+  mix-blend-mode: difference;
+}
+
+@keyframes auroraAnimation {
+  from {
+    background-position: 50% 50%, 50% 50%;
+  }
+  to {
+    background-position: 350% 50%, 350% 50%;
+  }
+}

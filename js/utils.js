@@ -1341,6 +1341,13 @@ const anzhiyu = {
     }
     authorInfoSayHiElement.textContent = randomGreeting;
   },
+    toggleBackgroundMode: function() {
+    if (window.AuroraPerformanceOptimizer && typeof window.AuroraPerformanceOptimizer.toggleBackground === 'function') {
+      window.AuroraPerformanceOptimizer.toggleBackground();
+    } else {
+      console.warn('背景切换功能未加载');
+    }
+  },
 };
 
 const anzhiyuPopupManager = {

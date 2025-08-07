@@ -251,6 +251,10 @@ document.addEventListener("DOMContentLoaded", function () {
         const prevEle = ele.previousElementSibling;
         prevEle.textContent = text;
         prevEle.style.opacity = 1;
+           // 初始化背景切换按钮
+      if (window.AuroraPerformanceOptimizer && typeof window.AuroraPerformanceOptimizer.initBackgroundToggle === 'function') {
+           window.AuroraPerformanceOptimizer.initBackgroundToggle();
+        }
         setTimeout(() => {
           prevEle.style.opacity = 0;
         }, 800);
