@@ -1,4 +1,6 @@
-/* 极光动画背景效果 */
+/*将原有代码替换为下列代码*/
+
+/* 极光动画背景效果 - 性能优化版本 */
 #web_bg {
   /* CSS变量定义 */
   --stripes: repeating-linear-gradient(
@@ -10,7 +12,6 @@
     #fff 16%
   );
   
-  
   --rainbow: repeating-linear-gradient(
     100deg,
     #60a5fa 10%,
@@ -20,20 +21,110 @@
     #60a5fa 30%
   );
   
-  /* 多个重复线性渐变组合形成不同比例宽度的条状背景 */
-  background-image: var(--stripes), var(--rainbow);
-  background-size: 300% 200%;
-  background-position: 50% 50%, 50% 50%;
+  /* 静态模式 - 低性能设备默认（白天模式适配） */
+  --stripes-static: linear-gradient(
+    100deg,
+    #000 0%,
+    #000 20%,
+    transparent 40%,
+    transparent 60%,
+    #000 80%
+  );
   
-  /* 高斯模糊背景并且反转图像颜色 */
-  filter: blur(10px) invert(1);
+  --rainbow-static: linear-gradient(
+    100deg,
+    #1e40af 0%,
+    #7c2d12 25%,
+    #065f46 50%,
+    #1e40af 75%,
+    #7c2d12 100%
+  );
   
-  /* 图层蒙版使用径向渐变，径向渐变采用ellipsis椭圆形状，并设置中心点在由上方 */
+  /* 白天模式专用静态背景 */
+  --stripes-static-light: linear-gradient(
+    100deg,
+    rgba(96, 165, 250, 0.3) 0%,
+    rgba(96, 165, 250, 0.3) 20%,
+    transparent 40%,
+    transparent 60%,
+    rgba(96, 165, 250, 0.3) 80%
+  );
+  
+  --rainbow-static-light: linear-gradient(
+    100deg,
+    rgba(96, 165, 250, 0.4) 0%,
+    rgba(232, 121, 249, 0.4) 25%,
+    rgba(94, 234, 212, 0.4) 50%,
+    rgba(96, 165, 250, 0.4) 75%,
+    rgba(232, 121, 249, 0.4) 100%
+  );
+  
+  /* 默认使用白天模式静态背景以确保兼容性 */
+  background-image: var(--stripes-static-light), var(--rainbow-static-light);
+  background-size: 100% 100%;
+  background-position: 50% 50%;
+  
+  /* 减少模糊强度以提升性能 */
+  filter: blur(10px)invert(1);
+  
+  /* 图层蒙版使用径向渐变 */
   mask-image: radial-gradient(ellipse at 100% 0%, black 40%, transparent 70%);
   -webkit-mask-image: radial-gradient(ellipse at 100% 0%, black 40%, transparent 70%);
   
   /* 取消鼠标事件 */
   pointer-events: none;
+  
+  /* 性能优化 */
+  will-change: auto;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* 高性能设备 - 完整动画效果 */
+@media (min-width: 1024px) and (min-height: 768px) {
+  .performance-high #web_bg {
+    background-image: var(--stripes), var(--rainbow);
+    background-size: 300% 200%;
+    filter: blur(10px) invert(1);
+    will-change: background-position;
+  }
+}
+
+/* 低性能设备或用户偏好 - 静态背景（暗色模式） */
+[data-theme="dark"] .performance-low #web_bg,
+[data-theme="dark"] .reduce-motion #web_bg {
+  background-image: var(--stripes-static), var(--rainbow-static);
+  background-size: 100% 100%;
+  filter: blur(3px);
+}
+
+/* 低性能设备或用户偏好 - 静态背景（白天模式） */
+:not([data-theme="dark"]) .performance-low #web_bg,
+:not([data-theme="dark"]) .reduce-motion #web_bg {
+  background-image: var(--stripes-static-light), var(--rainbow-static-light);
+  background-size: 100% 100%;
+  filter: blur(3px);
+}
+
+/* 尊重用户的动画偏好设置 */
+@media (prefers-reduced-motion: reduce) {
+  /* 暗色模式下的静态背景 */
+  [data-theme="dark"] #web_bg {
+    background-image: var(--stripes-static), var(--rainbow-static);
+    background-size: 100% 100%;
+    filter: blur(3px);
+  }
+  
+  /* 白天模式下的静态背景 */
+  :not([data-theme="dark"]) #web_bg {
+    background-image: var(--stripes-static-light), var(--rainbow-static-light);
+    background-size: 100% 100%;
+    filter: blur(3px);
+  }
+  
+  #web_bg::after {
+    animation: none !important;
+  }
 }
 
 /* 暗色模式下的极光效果调整 */
@@ -47,32 +138,92 @@
     #000 16%
   );
   
---rainbow: repeating-linear-gradient(
+  --rainbow: repeating-linear-gradient(
     100deg,
     #5433ff 10%,
     #c00099 15%,
     #720099 20%,
     #4b5ce3 25%,
     #6e33ff 30%
-);
+  );
   
-  /* 暗色模式下移除颜色反转，保持原色 */
-  filter: blur(10px);
+  /* 暗色模式静态背景 */
+  --stripes-static: linear-gradient(
+    100deg,
+    #000 0%,
+    #000 20%,
+    transparent 40%,
+    transparent 60%,
+    #000 80%
+  );
+  
+  --rainbow-static: linear-gradient(
+    100deg,
+    #5433ff 0%,
+    #c00099 25%,
+    #720099 50%,
+    #4b5ce3 75%,
+    #6e33ff 100%
+  );
+  
+  /* 暗色模式下使用暗色静态背景，覆盖默认的白天模式背景 */
+  background-image: var(--stripes-static), var(--rainbow-static);
+  
+  /* 暗色模式下移除颜色反转，保持原色，减少模糊强度 */
+  filter: blur(5px);
 }
 
+/* 暗色模式高性能设备 */
+@media (min-width: 1024px) and (min-height: 768px) {
+  [data-theme="dark"] .performance-high #web_bg {
+    filter: blur(10px);
+  }
+}
+
+/* 暗色模式低性能设备 */
+[data-theme="dark"] .performance-low #web_bg,
+[data-theme="dark"] .reduce-motion #web_bg {
+  filter: blur(3px);
+}
+
+/* 暗色模式下尊重用户动画偏好 */
+@media (prefers-reduced-motion: reduce) {
+  [data-theme="dark"] #web_bg {
+    filter: blur(3px);
+  }
+}
+
+/* 默认不显示动画伪元素，避免低性能设备负担 */
 #web_bg::after {
   content: '';
   position: absolute;
   inset: 0;
+  background-image: var(--stripes-static), var(--rainbow-static);
+  background-size: 100% 100%;
+  animation: none;
+  background-attachment: scroll;
+  mix-blend-mode: normal;
+  opacity: 0;
+}
+
+/* 高性能设备 - 完整动画效果 */
+.performance-high #web_bg::after {
   background-image: var(--stripes), var(--rainbow);
   background-size: 200% 100%;
   animation: auroraAnimation 60s linear infinite;
-  /* 背景图相对视图口的位置设置为固定定位 */
   background-attachment: fixed;
-  /* 背景颜色混合模式 */
   mix-blend-mode: difference;
+  opacity: 1;
 }
 
+/* 低性能设备 - 无动画 */
+.performance-low #web_bg::after,
+.reduce-motion #web_bg::after {
+  animation: none;
+  opacity: 0;
+}
+
+/* 动画关键帧 - 完整版本 */
 @keyframes auroraAnimation {
   from {
     background-position: 50% 50%, 50% 50%;
@@ -80,4 +231,11 @@
   to {
     background-position: 350% 50%, 350% 50%;
   }
+}
+
+/* GPU加速优化 */
+.performance-high #web_bg::after {
+  will-change: background-position;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
